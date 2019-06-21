@@ -1,7 +1,7 @@
 import unittest
 from LinkedList import LinkedList, LinkedListNode
 
-class TestBinarySearchRecursive(unittest.TestCase):
+class TestLinkedList(unittest.TestCase):
 
     def test_get(self):
         linkedlist = LinkedList(1)

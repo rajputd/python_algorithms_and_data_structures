@@ -16,9 +16,6 @@ class LinkedList():
 
         Parameters:
             data (varies): The node to append to the Linked List.
-
-        Returns:
-            None
         """
 
         current = self.head
@@ -45,4 +42,29 @@ class LinkedList():
 
         return current.data
 
+    def __len__(self):
+        """Get number of elements in linked list.
+        Parameters:
+            None.
 
+        Returns:
+            (int) : number of elements in linked list.
+        """
+        pass
+
+    def insert(self, index, data):
+        """inserts the given data into the linked last at the given index.
+
+        Parameters:
+            index (int) : location to insert the data at.
+            data (ind) : the data to be inserted.
+        """
+        pass
+
+    def delete(self, index):
+        """removes the data at the given index from the linked list.
+
+        Parameters:
+            index (int) : location of the data that will be deleted.
+        """
+        pass

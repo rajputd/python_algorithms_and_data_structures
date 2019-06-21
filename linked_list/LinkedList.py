@@ -50,7 +50,13 @@ class LinkedList():
         Returns:
             (int) : number of elements in linked list.
         """
-        pass
+        count = 1
+        current = self.head
+        while current.next != None:
+            count += 1
+            current = current.next
+
+        return count
 
     def insert(self, index, data):
         """inserts the given data into the linked last at the given index.

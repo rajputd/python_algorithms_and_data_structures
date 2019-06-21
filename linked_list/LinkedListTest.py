@@ -7,6 +7,17 @@ class TestLinkedList(unittest.TestCase):
         linkedlist = LinkedList(1)
         self.assertEqual(linkedlist.get(0), 1, "Should be 1")
 
+    def test_get_fails_on_invalid_index(self):
+        linkedlist = LinkedList(2)
+        passTest = False
+        try:
+            linkedlist.get(10)
+        except IndexError:
+            passTest = True
+
+        self.assertEqual(True, passTest, "Did not throw index error when given invalid index.")
+
+
     def test_append(self):
         linkedlist = LinkedList(5)
         linkedlist.append(4)

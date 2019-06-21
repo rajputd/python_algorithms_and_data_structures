@@ -38,7 +38,10 @@ class LinkedList():
         """
         current = self.head
         for i in range(index):
-            current = current.next
+            if current.next != None:
+                current = current.next
+            else:
+                raise IndexError
 
         return current.data
 

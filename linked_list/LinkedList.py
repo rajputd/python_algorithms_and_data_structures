@@ -38,7 +38,7 @@ class LinkedList():
         """
         current = self.head
         for i in range(index):
-            if current.next != None:
+            if current != None:
                 current = current.next
             else:
                 raise IndexError
@@ -62,13 +62,35 @@ class LinkedList():
         return count
 
     def insert(self, index, data):
-        """inserts the given data into the linked last at the given index.
+        """inserts the given data into the linked list at the given index.
 
         Parameters:
             index (int) : location to insert the data at.
             data (ind) : the data to be inserted.
         """
-        pass
+        newElement = LinkedListNode(data)
+
+        #if inserting element at head of list
+        if index == 0:
+            newElement.next = self.head
+            self.head = newElement
+            return
+
+        #otherwise traverse list to desired node
+        previous = None
+        current = self.head
+        for i in range(index):
+            if current != None:
+                previous = current
+                current = current.next
+            else:
+                raise IndexError
+
+        #insert new element into list
+        newElement.next = current
+        previous.next = newElement
+
+
 
     def delete(self, index):
         """removes the data at the given index from the linked list.

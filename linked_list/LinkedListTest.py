@@ -38,5 +38,34 @@ class TestLinkedList(unittest.TestCase):
         linkedlist.append(-5)
         self.assertEqual(len(linkedlist), 4, "Should be 4")
 
+    def test_insert_at_head(self):
+        linkedlist = LinkedList(2)
+        linkedlist.insert(0, 1)
+        self.assertEqual(linkedlist.get(0), 1, "Should be 1")
+
+    def test_insert_in_middle(self):
+        linkedlist = LinkedList(1)
+        linkedlist.append(3)
+        linkedlist.insert(1, 2)
+        self.assertEqual(linkedlist.get(1), 2, "Should be 2")
+
+    def test_insert_at_end(self):
+        linkedlist = LinkedList(1)
+        linkedlist.append(2)
+        linkedlist.insert(2, 3)
+        self.assertEqual(linkedlist.get(2), 3, "Should be 3")
+
+    def test_insert_at_invalid_index(self):
+        linkedlist = LinkedList(1)
+        passTest = False
+
+        try:
+            linkedlist.insert(10, 1)
+        except IndexError:
+            passTest = True
+
+        self.assertEqual(True, passTest, "Did not throw IndexError when given out of bounds index")
+
+
 if __name__ == '__main__':
     unittest.main()

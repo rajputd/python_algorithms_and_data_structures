@@ -53,9 +53,9 @@ class LinkedList():
         Returns:
             (int) : number of elements in linked list.
         """
-        count = 1
+        count = 0
         current = self.head
-        while current.next != None:
+        while current != None:
             count += 1
             current = current.next
 
@@ -98,4 +98,18 @@ class LinkedList():
         Parameters:
             index (int) : location of the data that will be deleted.
         """
-        pass
+
+        previous = None
+        current = self.head
+        for i in range(index):
+            if current != None:
+                previous = current
+                current = current.next
+            else:
+                raise IndexError
+
+        #delete element
+        if previous == None:
+            self.head = current.next
+        else:
+            previous.next = current.next

@@ -66,6 +66,25 @@ class TestLinkedList(unittest.TestCase):
 
         self.assertEqual(True, passTest, "Did not throw IndexError when given out of bounds index")
 
+    def test_del_at_head(self):
+        linkedlist = LinkedList(1)
+        linkedlist.delete(0)
+        self.assertEqual(len(linkedlist), 0, "Size should be zero")
+
+    def test_del_at_middle(self):
+        linkedlist = LinkedList(1)
+        linkedlist.append(2)
+        linkedlist.append(3)
+        linkedlist.delete(1)
+        self.assertEqual(len(linkedlist), 2, "Size should be two")
+
+    def test_del_at_end(self):
+        linkedlist = LinkedList(1)
+        linkedlist.append(2)
+        linkedlist.append(3)
+        linkedlist.delete(2)
+        self.assertEqual(len(linkedlist), 2, "Size should be two")
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -36,11 +36,14 @@ class LinkedList():
         Returns:
             (varies) : the node stored at that particular node.
         """
+        #traverse list to desired node
         current = self.head
         for i in range(index):
+            #check if we have gone past the end of the list
             if current != None:
                 current = current.next
             else:
+                #throw an index error if have gone past the end
                 raise IndexError
 
         return current.data
@@ -80,10 +83,12 @@ class LinkedList():
         previous = None
         current = self.head
         for i in range(index):
+            #check if we have gone past the end of the list
             if current != None:
                 previous = current
                 current = current.next
             else:
+                #throw error because we are inserting data at a invalid index
                 raise IndexError
 
         #insert new element into list
@@ -99,16 +104,20 @@ class LinkedList():
             index (int) : location of the data that will be deleted.
         """
 
+        #traverse list to desired noe
         previous = None
         current = self.head
         for i in range(index):
+            #check if we have gone past the end of the list
             if current != None:
                 previous = current
                 current = current.next
             else:
+                #throw error because we are deleting data at a invalid index
                 raise IndexError
 
-        #delete element
+        #delete the element
+        #if we are at the head just update self.head
         if previous == None:
             self.head = current.next
         else:

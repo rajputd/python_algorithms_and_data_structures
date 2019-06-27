@@ -6,7 +6,7 @@ def insertionSort(arr):
         #grab current element
         current = output[index]
 
-        #get last index of sorted outputay
+        #get last index of sorted output
         j = index
 
         #shift up all sorted elements that are greater than current one
